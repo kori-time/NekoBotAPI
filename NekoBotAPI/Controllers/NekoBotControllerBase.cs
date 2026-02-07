@@ -5,16 +5,13 @@ using NekoBotV1.DataBase;
 
 namespace NekoBotAPI.Controllers
 {
-    public abstract class NekoBotControllerBase(IServiceProvider services) : ControllerBase
+    public abstract class NekoBotControllerBase(DatabaseContext db) : ControllerBase
     {
 		private readonly Random random = new();
 		private readonly string _baseUrl = "https://api.nekobot.ca/v1";
 
 		protected async Task<ImageResult> DBFetchImagesAsync(ImageCategory imageCategory)
 		{
-			using var scope = services.CreateScope();
-			using var db = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
-
 			var results = db.Images.Where(X => X.ImageCategory == imageCategory);
 
 			if (!results.Any())

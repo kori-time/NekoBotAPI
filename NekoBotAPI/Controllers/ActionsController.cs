@@ -6,7 +6,7 @@ namespace NekoBotAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ActionsController(IServiceProvider services) : NekoBotControllerBase(services)
+	public class ActionsController(DatabaseContext db) : NekoBotControllerBase(db)
 	{
 		[Route("ikari")]
 		[HttpGet]

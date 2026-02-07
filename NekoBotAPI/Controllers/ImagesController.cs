@@ -6,7 +6,7 @@ namespace NekoBotAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ImagesController(IServiceProvider services) : NekoBotControllerBase(services)
+	public class ImagesController(DatabaseContext db) : NekoBotControllerBase(db)
 	{
         [Route("otto")]
         [HttpGet]
