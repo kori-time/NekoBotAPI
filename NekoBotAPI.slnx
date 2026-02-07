@@ -1,3 +1,16 @@
 <Solution>
-  <Project Path="NekoBotAPI/NekoBotAPI.csproj" />
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="PartDebug" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="../../NekoBot/NekoBotV1.Core/NekoBotV1.Core.csproj">
+    <BuildType Solution="PartDebug|*" Project="Debug" />
+  </Project>
+  <Project Path="../../NekoBot/NekoBotV1.DataBase/NekoBotV1.DataBase.csproj">
+    <BuildType Solution="PartDebug|*" Project="Release" />
+  </Project>
+  <Project Path="NekoBotAPI/NekoBotAPI.csproj">
+    <BuildType Solution="PartDebug|*" Project="Debug" />
+  </Project>
 </Solution>

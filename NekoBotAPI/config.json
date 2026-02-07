@@ -1,0 +1,10 @@
+{
+  "Discord_Token": "",
+  "Discord_SuperGuildSettings": [],
+  "Database_Driver": "mysql",
+  "Server": "localhost/IP",
+  "Port": 5432,
+  "Database": "database",
+  "User": "user",
+  "Password": "password"
+}
