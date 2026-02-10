@@ -10,6 +10,9 @@
   <Project Path="../../NekoBot/NekoBotV1.DataBase/NekoBotV1.DataBase.csproj">
     <BuildType Solution="PartDebug|*" Project="Release" />
   </Project>
+  <Project Path="../../NekoBotLibrary/NekoBotLibrary/NekoBotLibrary.csproj">
+    <BuildType Solution="PartDebug|*" Project="Release" />
+  </Project>
   <Project Path="NekoBotAPI/NekoBotAPI.csproj">
     <BuildType Solution="PartDebug|*" Project="Debug" />
   </Project>

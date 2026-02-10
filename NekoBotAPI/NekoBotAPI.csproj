@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\NekoBotLibrary\NekoBotLibrary\NekoBotLibrary.csproj" />
     <ProjectReference Include="..\..\..\NekoBot\NekoBotV1.DataBase\NekoBotV1.DataBase.csproj" />
   </ItemGroup>
 
