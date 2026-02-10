@@ -13,6 +13,9 @@
   <Project Path="../../NekoBotLibrary/NekoBotLibrary/NekoBotLibrary.csproj">
     <BuildType Solution="PartDebug|*" Project="Release" />
   </Project>
+  <Project Path="../../Nekos.Best-API/NekosBestApiNet/NekosBestApiNet.csproj">
+    <BuildType Solution="PartDebug|*" Project="Release" />
+  </Project>
   <Project Path="NekoBotAPI/NekoBotAPI.csproj">
     <BuildType Solution="PartDebug|*" Project="Debug" />
   </Project>

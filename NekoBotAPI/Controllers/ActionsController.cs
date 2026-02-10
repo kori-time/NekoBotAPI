@@ -16,13 +16,13 @@ namespace NekoBotAPI.Controllers
 		[HttpGet]
 		public Task<ImageResult> Baka() => DBFetchImagesAsync(ImageCategory.Baka);
 
-		[Route("kumu")]
+		[Route("kamu")]
 		[HttpGet]
-		public Task<ImageResult> Kumu() => DBFetchImagesAsync(ImageCategory.Kumu);
+		public Task<ImageResult> Kamu() => DBFetchImagesAsync(ImageCategory.Kamu);
 
-		[Route("akareru")]
+		[Route("akameru")]
 		[HttpGet]
-		public Task<ImageResult> Akareru() => DBFetchImagesAsync(ImageCategory.Akareru);
+		public Task<ImageResult> Akameru() => DBFetchImagesAsync(ImageCategory.Akameru);
 
 		[Route("Taikutsu")]
 		[HttpGet]
@@ -48,9 +48,9 @@ namespace NekoBotAPI.Controllers
 		[HttpGet]
 		public Task<ImageResult> Taberu() => DBFetchImagesAsync(ImageCategory.Taberu);
 
-		[Route("tetsuna")]
+		[Route("tetsunagi")]
 		[HttpGet]
-		public Task<ImageResult> TeTsuna() => DBFetchImagesAsync(ImageCategory.TeTsuna);
+		public Task<ImageResult> TeTsunagi() => DBFetchImagesAsync(ImageCategory.TeTsunagi);
 
 		[Route("akushu")]
 		[HttpGet]

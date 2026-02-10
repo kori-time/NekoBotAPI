@@ -6,6 +6,22 @@ using NekoBotV1.DataBase;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://0.0.0.0:7208");
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+	options.ListenAnyIP(7208, listen =>
+	{
+		listen.UseHttps();
+	});
+});
+
+builder.Services.AddHttpsRedirection(Options =>
+{
+	Options.RedirectStatusCode = StatusCodes.Status301MovedPermanently;
+	Options.HttpsPort = 7208;
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -38,12 +54,6 @@ builder.Services.AddDbContext<DatabaseContext>(opt => {
 	 opt.EnableSensitiveDataLogging()
 		 .UseLazyLoadingProxies();
  }, ServiceLifetime.Scoped);
-
-builder.Services.AddHttpsRedirection(Options =>
-{
-	Options.RedirectStatusCode = StatusCodes.Status301MovedPermanently;
-	Options.HttpsPort = 7208;
-});
 
 var app = builder.Build();
 
