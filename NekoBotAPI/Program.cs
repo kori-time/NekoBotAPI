@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using NekoBotLibrary;
 using NekoBotV1.Core;
 using NekoBotV1.DataBase;
 
@@ -17,6 +19,8 @@ if (settings is null)
 	return;
 }
 
+builder.Services.AddSingleton(settings);
+builder.Services.AddSingleton<Grabber>();
 builder.Services.AddDbContext<DatabaseContext>(opt => {
 	 var connectionString = settings.ConnectionString(out DatabaseProvider provider);
 
@@ -33,9 +37,12 @@ builder.Services.AddDbContext<DatabaseContext>(opt => {
 	 }
 	 opt.EnableSensitiveDataLogging()
 		 .UseLazyLoadingProxies();
- }, ServiceLifetime.Transient);
+ }, ServiceLifetime.Scoped);
+
 
 var app = builder.Build();
+
+app.Services.GetRequiredService<Grabber>().StartWithToken();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
