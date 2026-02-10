@@ -20,7 +20,7 @@ namespace NekoBotAPI.Controllers
 			var number = random.Next(await results.CountAsync());
 			var result = await results.ElementAtAsync(number);
 
-			var imageresult = ImageResult.FromSuccess($"{_baseUrl}/{result.Location}/{result.Filename}", imageCategory);
+			var imageresult = ImageResult.FromSuccess(result.URl, imageCategory);
 			return imageresult;
 		}
 	}
