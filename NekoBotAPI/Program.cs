@@ -39,6 +39,11 @@ builder.Services.AddDbContext<DatabaseContext>(opt => {
 		 .UseLazyLoadingProxies();
  }, ServiceLifetime.Scoped);
 
+builder.Services.AddHttpsRedirection(Options =>
+{
+	Options.RedirectStatusCode = StatusCodes.Status301MovedPermanently;
+	Options.HttpsPort = 7208;
+});
 
 var app = builder.Build();
 
